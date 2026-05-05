@@ -120,7 +120,7 @@ public final class SetupWizardActivity extends Activity implements View.OnClickL
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
-        setTheme(android.R.style.Theme_Translucent_NoTitleBar);
+        setTheme(android.R.style.Theme_DeviceDefault_Light_NoActionBar);
         super.onCreate(savedInstanceState);
 
         mImm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
