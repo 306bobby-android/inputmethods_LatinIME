@@ -113,7 +113,7 @@
     <string name="use_personalized_dicts">Personalized suggestions</string>
 
     <!-- Option to enable sending usage statistics -->
-    <string name="enable_metrics_logging">"Improve <xliff:g id="APPLICATION_NAME" example="Android Keyboard">%s</xliff:g>"</string>
+    <string name="enable_metrics_logging">"Improve AOSP Keys NEXT"</string>
 
     <!-- Option name for enabling or disabling the double-space period feature that lets double tap on spacebar insert a period followed by a space [CHAR LIMIT=30] -->
     <string name="use_double_space_period">Double-space period</string>

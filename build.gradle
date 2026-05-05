@@ -29,8 +29,8 @@ android {
         targetSdkVersion 34
         versionName "1.0"
 
-        applicationId 'com.android.inputmethod.latin'
-        testApplicationId 'com.android.inputmethod.latin.tests'
+        applicationId 'com.306bobbyandroid.AOSPKeysNEXT'
+        testApplicationId 'com.306bobbyandroid.AOSPKeysNEXT.tests'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = false
 
