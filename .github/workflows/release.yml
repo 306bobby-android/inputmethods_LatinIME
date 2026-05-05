@@ -28,19 +28,25 @@ jobs:
         run: ./gradlew assembleRelease
 
       - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        id: sign_app
-        with:
-          releaseDirectory: build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          echo "${{ secrets.SIGNING_KEY }}" | base64 -d > release.keystore
+          BUILD_TOOLS_VERSION=$(ls -d ${ANDROID_HOME}/build-tools/* | tail -1)
+          
+          # Find the generated APK
+          UNSIGNED_APK=$(find build/outputs/apk/release -name "*.apk" | head -1)
+          echo "Found APK: $UNSIGNED_APK"
+          
+          $BUILD_TOOLS_VERSION/apksigner sign --ks release.keystore \
+            --ks-key-alias "${{ secrets.KEY_ALIAS }}" \
+            --ks-pass "pass:${{ secrets.KEYSTORE_PASSWORD }}" \
+            --key-pass "pass:${{ secrets.KEY_PASSWORD }}" \
+            --out build/outputs/apk/release/AOSPKeysNEXT-v0.1.0.apk \
+            "$UNSIGNED_APK"
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ steps.sign_app.outputs.signedReleaseFile }}
+          files: build/outputs/apk/release/AOSPKeysNEXT-v0.1.0.apk
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref }}
           draft: false
