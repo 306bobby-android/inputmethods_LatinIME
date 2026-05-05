@@ -15,7 +15,6 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.inputmethod.latin.tests"
     android:versionCode="30">
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
@@ -29,7 +28,7 @@
     </application>
 
     <instrumentation android:name="androidx.test.runner.AndroidJUnitRunner"
-        android:targetPackage="com.android.inputmethod.latin"
+        android:targetPackage="com.the306bobby.aospkeysnext"
         android:label="LatinIME tests">
     </instrumentation>
 </manifest>

@@ -15,8 +15,8 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:latin="http://schemas.android.com/apk/res-auto"
      coreApp="true"
-     package="com.306bobbyandroid.AOSPKeysNEXT"
      android:versionCode="30">
 
     <uses-sdk android:minSdkVersion="30"
@@ -106,6 +106,7 @@
              android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
