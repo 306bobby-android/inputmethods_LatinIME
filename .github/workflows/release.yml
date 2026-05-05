@@ -40,13 +40,13 @@ jobs:
             --ks-key-alias "${{ secrets.KEY_ALIAS }}" \
             --ks-pass "pass:${{ secrets.KEYSTORE_PASSWORD }}" \
             --key-pass "pass:${{ secrets.KEY_PASSWORD }}" \
-            --out build/outputs/apk/release/AOSPKeysNEXT-v0.1.0.apk \
+            --out build/outputs/apk/release/AOSPKeysNEXT-v0.1.2.apk \
             "$UNSIGNED_APK"
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: build/outputs/apk/release/AOSPKeysNEXT-v0.1.0.apk
+          files: build/outputs/apk/release/AOSPKeysNEXT-v0.1.2.apk
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref }}
           draft: false
