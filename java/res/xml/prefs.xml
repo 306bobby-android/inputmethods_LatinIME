@@ -48,4 +48,8 @@
         android:title="@string/settings_screen_advanced"
         android:key="screen_advanced"
         android:icon="@drawable/ic_settings_advanced" />
+    <Preference
+        android:key="pref_version_info"
+        android:title="@string/version_text"
+        android:selectable="false" />
 </PreferenceScreen>

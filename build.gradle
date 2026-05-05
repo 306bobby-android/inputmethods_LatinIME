@@ -27,7 +27,7 @@ android {
     defaultConfig {
         minSdkVersion 30
         targetSdkVersion 34
-        versionName "1.0"
+        versionName "0.1.0"
 
         applicationId 'com.306bobbyandroid.AOSPKeysNEXT'
         testApplicationId 'com.306bobbyandroid.AOSPKeysNEXT.tests'

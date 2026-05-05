@@ -63,6 +63,10 @@ public final class SettingsFragment extends InputMethodSettingsFragment {
             final Preference gesturePreference = findPreference(Settings.SCREEN_GESTURE);
             preferenceScreen.removePreference(gesturePreference);
         }
+        final Preference versionPreference = findPreference(Settings.PREF_VERSION_INFO);
+        if (versionPreference != null) {
+            versionPreference.setSummary(ApplicationUtils.getVersionName(getActivity()));
+        }
     }
 
     @Override
