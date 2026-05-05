@@ -65,7 +65,8 @@ public final class SettingsFragment extends InputMethodSettingsFragment {
         }
         final Preference versionPreference = findPreference(Settings.PREF_VERSION_INFO);
         if (versionPreference != null) {
-            versionPreference.setSummary(ApplicationUtils.getVersionName(getActivity()));
+            final String versionName = ApplicationUtils.getVersionName(getActivity());
+            versionPreference.setTitle(getString(R.string.version_text, versionName));
         }
     }
 
